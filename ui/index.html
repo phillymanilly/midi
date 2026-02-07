@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MIDI Generator UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>MIDI Generator</h1>
+        <p>Baue dir ein CLI-Kommando für den Generator.</p>
+      </header>
+
+      <section class="card">
+        <form id="command-form">
+          <div class="grid">
+            <label>
+              Artist
+              <input type="text" name="artist" value="Drake" />
+            </label>
+            <label>
+              Output-Ordner
+              <input type="text" name="out" value="out" />
+            </label>
+            <label>
+              Anzahl Dateien
+              <input type="number" name="n" value="10" min="1" />
+            </label>
+            <label>
+              Takte
+              <input type="number" name="bars" value="8" min="1" />
+            </label>
+            <label>
+              Seed
+              <input type="number" name="seed" value="42" min="0" />
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="bass" checked />
+              Bass hinzufügen
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="topline" />
+              Topline hinzufügen
+            </label>
+          </div>
+        </form>
+
+        <div class="output">
+          <h2>CLI-Kommando</h2>
+          <pre id="command-output"></pre>
+          <button id="copy-btn" type="button">Kommando kopieren</button>
+          <span id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="card note">
+        <h2>Hinweis</h2>
+        <p>
+          Diese UI erzeugt nur ein CLI-Kommando. Starte danach das Kommando in deinem
+          Terminal, um MIDI-Dateien zu generieren.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
